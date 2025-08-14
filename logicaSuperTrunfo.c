@@ -6,7 +6,7 @@
 int main(){
 
     //VARIAVEIS
-    int num_estado, num_estado_2,  pontos_turisticos, pontos_turisticos_2,escolha;
+    int num_estado, num_estado_2,  pontos_turisticos, pontos_turisticos_2, escolha, escolha_2;
     float area, area_2, pib, pib_2,densidade_populacional,densidade_populacional_2, pib_per_capita,pib_per_capita_2, super_poder, super_poder_2;
     char inic_estado, inic_estado_2;
     char cidade[50], cidade_2[50];
@@ -95,19 +95,102 @@ int main(){
     printf("PIB per Capita: %.2f reais \n \n", pib_per_capita_2);
 
     // INICIANDO LOGICA DE COMPARAÇÃO
-    printf("Agora vamos escolher um elemento para comparar entre as cidades e verificar a vencedora entre elas. \n");
-    printf("Escolhas estre as opções disponiveis qual voçê deseja usar para comparação \n");
+    printf("Agora vamos escolher dois elemento para comparar entre as cidades e verificar a vencedora entre elas. \n");
+    printf("Escolhas estre as opções disponiveis as que voçê deseja usar para comparação \n");
     printf("1-População \n");
     printf("2-Área \n");
     printf("3-PIB \n");
     printf("4-Nº Pontos Turisticos \n");
     printf("5-Densidade Populacional \n");
     printf("6-PIB per Capita \n");
-    printf("INFORME O NUMERO DO ITEM QUE DESEJA USAR PARA COMPARAÇÃO. \n");
-    scanf("%d", &escolha);
+    printf("INFORME O NUMERO DO PRIMEIRO ITEM QUE DESEJA USAR PARA COMPARAÇÃO. \n");
+    scanf("%d \n", &escolha);
+    printf("INFORME O NUMERO DO SEGUNDO ITEM QUE DESEJA USAR PARA COMPARAÇÃO. \n");
+    scanf("%d", &escolha_2);
 
     //ANALIZANDO A ESCOLHA
-    switch (escolha)
+    if(escolha == escolha_2 || (1 > escolha && escolha > 6) || (1 > escolha_2 && escolha_2 > 6)){
+        printf("OPÇÃO INVALIDA INFORMADA");
+    }else{
+
+        switch (escolha)
+    {
+    case 1:
+        printf("Voçê escolheu: População \n");
+        printf("%s: %lu habitantes X %s: %lu habitantes \n", cidade, populacao, cidade_2, populacao_2);
+        if(populacao > populacao_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(populacao == populacao_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+
+        }
+        break;
+
+    case 2:
+    printf("Voçê escolheu: Área \n");
+    printf("%s: %.2f Km² X %s: %.2f Km²", cidade, area, cidade_2, area_2);
+        if(area > area_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(area == area_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+        }
+        break;
+
+        case 3:
+    printf("Voçê escolheu: PIB \n");
+    printf("%s: PIB %.2f bilhões de reais X %s:PIB %.2f bilhões de reais \n ", cidade, pib, cidade_2, pib_2);
+        if(pib > pib_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(pib == pib_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+        }
+        break;
+
+        case 4:
+    printf("Voçê escolheu: Nº de Pontos Turisticos \n");
+    printf("%s:  %d Pontos Turisticos X %s: %d Pontos Turisticos \n ", cidade, pontos_turisticos, cidade_2, pontos_turisticos_2);
+        if(pontos_turisticos > pontos_turisticos_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(pontos_turisticos == pontos_turisticos_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+        }
+        break;
+
+        case 5:
+    printf("Voçê escolheu: Densidade Populacional \n");
+    printf("%s: %.2f Densidade Populacional X %s: %.2f Densidade Populacional \n ", cidade, densidade_populacional, cidade_2, densidade_populacional_2);
+        if(densidade_populacional < densidade_populacional_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(densidade_populacional == densidade_populacional_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+        }
+        break;
+
+        case 6:
+    printf("Voçê escolheu: PIB per Capita \n");
+    printf("%s: PIB per Capita de %.2f X %s: PIB per Capita de %.2f \n ", cidade, pib_per_capita, cidade_2, pib_per_capita_2);
+        if(pib_per_capita > pib_per_capita_2){
+            printf("Cidade %s venceu contra cidade %s \n", cidade, cidade_2);
+        }else if(pib_per_capita == pib_per_capita_2){
+            printf("Empate!! \n");
+        }else{
+            printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
+        }
+        break;       
+    }
+
+
+    switch (escolha_2)
     {
     case 1:
         printf("Voçê escolheu: População \n");
@@ -187,6 +270,8 @@ int main(){
         break;
     }
 
+
+    }
     return 0;
 
 
