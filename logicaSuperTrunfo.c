@@ -10,7 +10,7 @@ int main(){
     float area, area_2, pib, pib_2,densidade_populacional,densidade_populacional_2, pib_per_capita,pib_per_capita_2, super_poder, super_poder_2;
     char inic_estado, inic_estado_2;
     char cidade[50], cidade_2[50];
-    unsigned long int populacao, populacao_2;
+    unsigned long int populacao, populacao_2, soma, soma_2;
 
 
 
@@ -102,17 +102,17 @@ int main(){
     printf("3-PIB \n");
     printf("4-Nº Pontos Turisticos \n");
     printf("5-Densidade Populacional \n");
-    printf("6-PIB per Capita \n");
+    printf("6-PIB per Capita \n \n");
     printf("INFORME O NUMERO DO PRIMEIRO ITEM QUE DESEJA USAR PARA COMPARAÇÃO. \n");
-    scanf("%d \n", &escolha);
+    scanf("%d", &escolha);
     printf("INFORME O NUMERO DO SEGUNDO ITEM QUE DESEJA USAR PARA COMPARAÇÃO. \n");
     scanf("%d", &escolha_2);
-
+    printf("\n \n");
     //ANALIZANDO A ESCOLHA
-    if(escolha == escolha_2 || (1 > escolha && escolha > 6) || (1 > escolha_2 && escolha_2 > 6)){
-        printf("OPÇÃO INVALIDA INFORMADA");
+    if(escolha == escolha_2 || (1 > escolha || escolha > 6) || (1 > escolha_2 || escolha_2 > 6)){
+        printf("OPÇÃO INVALIDA INFORMADA \n");
     }else{
-
+        printf("Resultado das comparações \n \n");
         switch (escolha)
     {
     case 1:
@@ -189,6 +189,7 @@ int main(){
         break;       
     }
 
+    printf("\n \n");
 
     switch (escolha_2)
     {
@@ -262,14 +263,76 @@ int main(){
             printf("Empate!! \n");
         }else{
             printf("Cidade %s venceu contra cidade %s \n", cidade_2, cidade);
-        }
+        };
         break;
 
-    default:
-    printf("VALOR INVALIDO, ENCERENDO EXECUÇÃO \n");
-        break;
-    }
+    };
+    
+    switch (escolha)
+    {
+    case 1:
+        soma = (float) populacao;
+        soma_2 = (float) populacao_2;
+    break;
 
+    case 2:
+        soma = (float) area;
+        soma_2 = (float) area_2;
+    break;
+
+    case 3:
+        soma = (float) pib;
+        soma_2 = (float) pib_2;
+    break;
+
+    case 4:
+        soma = (float) pontos_turisticos;
+        soma_2 = (float) pontos_turisticos_2;
+    break;
+
+    case 5:
+        soma = (float) 1 / densidade_populacional;
+        soma_2 = (float) 1 / densidade_populacional_2;
+    break;
+
+    case 6:
+       soma = (float) pib_per_capita;
+       soma_2 = (float) pib_per_capita_2;
+    break;
+}
+
+switch (escolha_2)
+    {
+    case 1:
+        soma = (float) populacao;
+        soma_2 = (float) populacao_2;
+    break;
+
+    case 2:
+        soma = (float) area;
+        soma_2 = (float) area_2;
+    break;
+
+    case 3:
+        soma = (float) pib;
+        soma_2 = (float) pib_2;
+    break;
+
+    case 4:
+        soma = (float) pontos_turisticos;
+        soma_2 = (float) pontos_turisticos_2;
+    break;
+
+    case 5:
+        soma = (float) 1 / densidade_populacional;
+        soma_2 = (float) 1 / densidade_populacional_2;
+    break;
+
+    case 6:
+       soma = (float) pib_per_capita;
+       soma_2 = (float) pib_per_capita_2;
+    break;
+}
 
     }
     return 0;
