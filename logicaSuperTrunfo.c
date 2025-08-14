@@ -304,35 +304,45 @@ int main(){
 switch (escolha_2)
     {
     case 1:
-        soma = (float) populacao;
-        soma_2 = (float) populacao_2;
+        soma += (float) populacao;
+        soma_2 += (float) populacao_2;
     break;
 
     case 2:
-        soma = (float) area;
-        soma_2 = (float) area_2;
+        soma += (float) area;
+        soma_2 += (float) area_2;
     break;
 
     case 3:
-        soma = (float) pib;
-        soma_2 = (float) pib_2;
+        soma += (float) pib;
+        soma_2 += (float) pib_2;
     break;
 
     case 4:
-        soma = (float) pontos_turisticos;
-        soma_2 = (float) pontos_turisticos_2;
+        soma += (float) pontos_turisticos;
+        soma_2 += (float) pontos_turisticos_2;
     break;
 
     case 5:
-        soma = (float) 1 / densidade_populacional;
-        soma_2 = (float) 1 / densidade_populacional_2;
+        soma += (float) 1 / densidade_populacional;
+        soma_2 += (float) 1 / densidade_populacional_2;
     break;
 
     case 6:
-       soma = (float) pib_per_capita;
-       soma_2 = (float) pib_per_capita_2;
+       soma += (float) pib_per_capita;
+       soma_2 += (float) pib_per_capita_2;
     break;
-}
+};
+
+    printf("\n \n");
+    printf("Agora irei somar os valores selecionados para comparação, a cidade com maior valor é o vencedor FINAL!! \n");
+    if(soma > soma_2){
+        printf("%s e a vencedorada disputa final \n \n", cidade);
+    }else if(soma < soma){
+        printf("%s e a vencedorada disputa final \n \n", cidade);
+    }else{
+        printf("OCORREU UM EMPATE!!");
+    }
 
     }
     return 0;
